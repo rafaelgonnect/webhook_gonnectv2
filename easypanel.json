@@ -1,0 +1,20 @@
+{
+  "name": "webhook-v2",
+  "description": "Webhook simplificado para integração.",
+  "version": "1.0.0",
+  "type": "application",
+  "framework": "docker",
+  "dockerfilePath": "./Dockerfile",
+  "port": 3000,
+  "environment": {
+    "PORT": "3000",
+    "MONGODB_URI": "sua_string_de_conexao_aqui"
+  },
+  "healthCheck": {
+    "path": "/health",
+    "interval": 30,
+    "timeout": 10,
+    "retries": 3
+  },
+  "restartPolicy": "unless-stopped"
+}
